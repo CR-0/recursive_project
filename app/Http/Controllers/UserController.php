@@ -134,12 +134,12 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $var = UserModel::where('user_id',$id)->get();
-        var_dump($var);
-        echo "<hr>";
-        foreach ($var as $key => $value) {
-          echo $value->short_code;
-          # code...
-        }
+        $var = UserModel::find($id);
+        echo '<br>short_code = '.$var->short_code;
+        echo '<br>user_id = '.$var->user_id;
+        echo '<br>parent_id = '.$var->parent_id;
+        echo '<br>balance = ';
+        echo is_null($var->balancemodel)?0:$var->balancemodel->balance;
+
     }
 }

@@ -13,4 +13,12 @@ class UserModel extends Model
     //public $timestamps = false;
     protected $fillable = ['short_code','parent_id'];
 
+    public function actionmodel()
+    {
+      return $this->hasMany('App\ActionModel');
+    }
+    public function balancemodel()
+    {
+      return $this->hasOne('App\BalanceModel','user_id','user_id');
+    }
 }

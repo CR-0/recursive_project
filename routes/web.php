@@ -5,6 +5,4 @@ Route::get('/', function () {
 });
 
 Route::get('/create/{short_code}','UserController@create');
-Route::get('/list','UserController@show');
-
-Route::get('/{id}','UserController@index');
+Route::get('/show/{id}','UserController@show');

@@ -11,4 +11,9 @@ class BalanceModel extends Model
     public $timestamps = false;
     protected $primaryKey = 'user_id';
     protected $fillable = ['user_id','balance'];
+
+    public function usermodel()
+    {
+      return $this->belongsTo('App\UserModel','user_id','user_id');
+    }
 }
